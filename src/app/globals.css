@@ -20,7 +20,7 @@
   /* --- ink (near-black, the press) --- */
   --color-ink: #1c1b19;     /* deepest, headlines + primary type */
   --color-stone: #4a463f;   /* body text on paper */
-  --color-ash: #8b857b;     /* captions, labels, muted */
+  --color-ash: #7c756a;     /* captions, labels, muted (darkened for readability) */
 
   /* --- evergreen (the established brand field) --- */
   --color-pine: #1f3a2e;    /* deep evergreen, dark sections, trust */
@@ -226,12 +226,14 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--line-ink);
 }
 
-/* dark field (deep evergreen section) */
+/* dark field (deep evergreen section). NOTE: no blanket heading-color rule
+   here. field-pine is used as a frame behind LIGHT cards (the guarantee pledge),
+   so headings inside must keep their own (dark) color. Set text-paper in JSX
+   for any heading placed directly on the pine background. */
 .field-pine {
   background: var(--color-pine);
   color: #d8ded6;
 }
-.field-pine h1, .field-pine h2, .field-pine h3, .field-pine h4 { color: #f6f3ee; }
 
 .field-ink {
   background: var(--color-ink);

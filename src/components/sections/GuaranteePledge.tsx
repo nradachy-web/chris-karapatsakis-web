@@ -42,7 +42,7 @@ export default function GuaranteePledge({
               &ldquo;{GUARANTEE.promise}&rdquo;
             </p>
 
-            <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-ash">{GUARANTEE.fine}</p>
+            <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-stone">{GUARANTEE.fine}</p>
 
             {/* seal + signature */}
             <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row sm:gap-12">
@@ -62,7 +62,7 @@ export default function GuaranteePledge({
               <div className="mt-10">
                 <Link
                   href="/seller-guarantee"
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:text-clay-deep"
+                  className="group link-underline inline-flex items-center gap-2 text-sm font-semibold text-clay-deep"
                 >
                   Read the full guarantee
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -70,7 +70,7 @@ export default function GuaranteePledge({
               </div>
             )}
 
-            <p className="mx-auto mt-8 max-w-lg text-[0.7rem] leading-relaxed text-ash">
+            <p className="mx-auto mt-8 max-w-lg text-[0.72rem] leading-relaxed text-stone/80">
               {GUARANTEE.carveout}
             </p>
           </div>
