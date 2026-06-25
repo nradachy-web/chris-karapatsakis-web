@@ -40,9 +40,10 @@ jobs:
           NEXT_PUBLIC_ADS_CMA_SENDTO: ${{ vars.NEXT_PUBLIC_ADS_CMA_SENDTO }}
           NEXT_PUBLIC_ADS_CALL_SENDTO: ${{ vars.NEXT_PUBLIC_ADS_CALL_SENDTO }}
           NEXT_PUBLIC_GA4_ID: ${{ vars.NEXT_PUBLIC_GA4_ID }}
-          # Preview on the GitHub Pages project page. For the real domain cutover:
-          # drop this line and add public/CNAME with chriskarapatsakis.com.
-          NEXT_PUBLIC_BASE_PATH: "/chris-karapatsakis-web"
+          # Live on the custom domain (chriskarapatsakis.com) served at root via
+          # public/CNAME, so NEXT_PUBLIC_BASE_PATH stays unset. To go back to the
+          # project-page preview, set NEXT_PUBLIC_BASE_PATH "/chris-karapatsakis-web"
+          # and remove public/CNAME.
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
