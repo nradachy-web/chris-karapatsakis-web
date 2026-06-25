@@ -41,7 +41,7 @@ export default function AboutPage() {
             <Reveal>
               <div className="lg:sticky lg:top-28">
                 <div className="reg-frame rounded-lg border border-[var(--line-ink)] bg-card p-3.5 shadow-[var(--shadow-card)]">
-                  <HeadshotFrame src="/images/chris-headshot-2.jpg" ratio="aspect-[4/5]" />
+                  <HeadshotFrame ratio="aspect-[4/5]" />
                 </div>
                 <div className="mt-5 space-y-3">
                   <div className="flex items-start gap-3 text-sm text-stone">
