@@ -38,7 +38,7 @@ export const BRAND = {
   // "licensed real estate agent" everywhere.
   isRealtor: true,
   roleShort: "Canton Listing Agent",
-  roleLong: "Listing Specialist serving Wayne, Oakland and Livingston Counties",
+  roleLong: "Listing Specialist serving Wayne, Oakland and Washtenaw Counties",
 
   // Real headshot in place (387x413, from his Remerica/Zillow profile). A higher
   // resolution original from Chris would render even sharper at large sizes.
@@ -67,7 +67,7 @@ export const BRAND = {
   // GATE(LICENSE): optional in MI. Pull from val.apps.lara.state.mi.us if wanted.
   licenseNumber: "",
 
-  counties: ["Wayne", "Oakland", "Livingston"],
+  counties: ["Wayne", "Oakland", "Washtenaw"],
   specialtyCities: ["Canton", "Plymouth", "Northville", "South Lyon"],
 
   awards: [
@@ -129,14 +129,14 @@ export const CTA = {
 // HERO  (homepage)
 // ============================================================
 export const HERO = {
-  eyebrow: "Canton · Plymouth · Northville · South Lyon",
+  eyebrow: "Wayne · Oakland · Washtenaw Counties",
   // h1 with an italic emphasis span
   headline: {
     lead: "What is your home ",
     italic: "really worth",
     rest: ", and how fast will it sell?",
   },
-  sub: "Straight answers from Canton's veteran listing agent. Nearly 30 years selling homes across Wayne, Oakland and Livingston. A free market analysis, a home warranty for every seller, and your listing back if you are ever unhappy.",
+  sub: "Straight answers from Canton's veteran listing agent. Nearly 30 years selling homes across Wayne, Oakland and Washtenaw counties, specializing in Canton, Plymouth, Northville and South Lyon. A free market analysis, a home warranty for every seller, and your listing back if you are ever unhappy.",
   ctaPrimary: CTA.primary,
   ctaSecondary: "Or call or text Chris",
   trust: "Free, no obligation. I personally respond, usually within the hour.",
@@ -147,7 +147,7 @@ export const HERO = {
 // ============================================================
 export const STAT_RIBBON = [
   { value: "Nearly 30 Years", label: "Selling homes across Metro Detroit" },
-  { value: "Hundreds of Homes", label: "Closed for Wayne, Oakland and Livingston families" },
+  { value: "Hundreds of Homes", label: "Closed for Wayne, Oakland and Washtenaw families" },
   { value: "Sellers Only", label: "A listing specialist, in your corner alone" },
   { value: "Free Home Warranty", label: "Included for every seller I represent" },
 ] as const;
@@ -410,7 +410,7 @@ export const CITIES: CityData[] = [
   {
     slug: "south-lyon",
     name: "South Lyon",
-    county: "Oakland and Livingston Counties",
+    county: "Oakland County",
     zips: ["48178"],
     medianPrice: "~$395,000",
     daysOnMarket: "~20 days",
@@ -461,7 +461,7 @@ export const FAQ = [
   },
   {
     q: "What areas do you serve?",
-    a: "I sell homes across Wayne, Oakland, and Livingston counties, and I specialize in Canton, Plymouth, Northville, and South Lyon. If your home is in or near these communities, call or text me at (734) 634-7056 and we will talk.",
+    a: "I sell homes across Wayne, Oakland, and Washtenaw counties, and I specialize in Canton, Plymouth, Northville, and South Lyon. If your home is in or near these communities, call or text me at (734) 634-7056 and we will talk.",
   },
   {
     q: "What is the first step?",
@@ -519,7 +519,7 @@ export const SEO = {
   about: {
     title: "About Chris (Christo) Karapatsakis | Canton MI Listing Agent",
     description:
-      "Nearly 30 years, hundreds of homes sold, the vast majority seller-side. Real Estate All Star (Hour Detroit/DBusiness). Serving Wayne, Oakland and Livingston.",
+      "Nearly 30 years, hundreds of homes sold, the vast majority seller-side. Real Estate All Star (Hour Detroit/DBusiness). Serving Wayne, Oakland and Washtenaw.",
   },
   contact: {
     title: "Contact Chris Karapatsakis | Canton MI Listing Agent",

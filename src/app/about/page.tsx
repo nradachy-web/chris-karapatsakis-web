@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const PARAS = [
-  "Christo Karapatsakis, known to everyone as Chris, has spent nearly three decades doing one thing well: selling homes across Metro Detroit. From his home base in Canton, he has represented hundreds of families through Wayne, Oakland, and Livingston counties.",
+  "Christo Karapatsakis, known to everyone as Chris, has spent nearly three decades doing one thing well: selling homes across Metro Detroit. From his home base in Canton, he has represented hundreds of families through Wayne, Oakland and Washtenaw counties.",
   "He is a listing specialist. The vast majority of his work is representing sellers, and that focus is deliberate. When you list with Chris, you get an agent whose entire attention, pricing, marketing, and hard negotiation, is on your side of the table.",
   "Sellers come back to Chris for the same reasons every time: he answers fast, usually within the hour, and he tells the truth. If your price is wrong or a repair will cost you at the table, he will say so plainly. He would rather give you an honest answer you can act on than a comfortable one you cannot.",
   "Every seller he lists gets a free market analysis, a home warranty, and the Easy-Exit Guarantee. The risk sits with Chris, not with you. After nearly 30 years, that confidence is earned.",

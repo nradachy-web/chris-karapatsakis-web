@@ -18,7 +18,7 @@ export default function AreasPage() {
         eyebrow="Where I sell"
         title="The towns I know"
         italic="street by street"
-        subtitle="I focus on four communities where I have sold homes for nearly 30 years, across Wayne, Oakland and Livingston counties. Pick yours for local market data and a free home valuation."
+        subtitle="I focus on four communities where I have sold homes for nearly 30 years, across Wayne, Oakland and Washtenaw counties. Pick yours for local market data and a free home valuation."
       />
       <ServiceAreas />
       <FinalCTA />

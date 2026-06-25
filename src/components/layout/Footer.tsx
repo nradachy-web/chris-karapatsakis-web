@@ -47,7 +47,7 @@ export default function Footer() {
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#bfc4ba]">
               Straight answers, hard negotiation, and a no-risk listing. Nearly 30 years selling
-              homes across Wayne, Oakland and Livingston counties.
+              homes across Wayne, Oakland and Washtenaw counties.
             </p>
 
             <div className="mt-6 space-y-3 text-sm">

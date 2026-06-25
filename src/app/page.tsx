@@ -26,7 +26,7 @@ export default function HomePage() {
       <CinematicBand
         image="/scenes/brand-street.jpg"
         video="/video/brand-street.mp4"
-        eyebrow="Wayne · Oakland · Livingston"
+        eyebrow="Wayne · Oakland · Washtenaw"
         title="Nearly 30 years on these streets."
         sub="I have not parachuted in from a downtown brokerage. I have sold homes block by block across Metro Detroit for almost three decades, and I know what yours is worth."
         cta={{ href: "/areas", label: "See your town" }}
