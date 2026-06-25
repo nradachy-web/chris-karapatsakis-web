@@ -49,13 +49,13 @@ export default function PageHero({
 
       <div className="container-wide">
         <Reveal>
-          <span className={cn("record-label", onImage && "record-label-sand")}>{eyebrow}</span>
+          <span className={cn("record-label", onImage && "record-label-sand text-on-media")}>{eyebrow}</span>
         </Reveal>
         <Reveal delay={0.06}>
           <h1
             className={cn(
               "mt-5 max-w-4xl font-display text-[clamp(2.2rem,5vw,3.7rem)] font-light leading-[1.04] tracking-[-0.025em]",
-              onImage ? "text-paper" : "text-ink"
+              onImage ? "text-paper text-on-media" : "text-ink"
             )}
           >
             {title}
@@ -69,7 +69,7 @@ export default function PageHero({
             <p
               className={cn(
                 "mt-6 max-w-2xl text-[1.08rem] leading-relaxed pretty",
-                onImage ? "text-[#e7e3d9]" : "text-stone"
+                onImage ? "text-[#f0ece2] text-on-media" : "text-stone"
               )}
             >
               {subtitle}

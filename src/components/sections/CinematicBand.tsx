@@ -57,19 +57,19 @@ export default function CinematicBand({
         <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}>
           {eyebrow && (
             <Reveal>
-              <span className={`record-label record-label-sand ${centered ? "justify-center" : ""}`}>
+              <span className={`record-label record-label-sand text-on-media ${centered ? "justify-center" : ""}`}>
                 {eyebrow}
               </span>
             </Reveal>
           )}
           <Reveal delay={0.06}>
-            <h2 className="mt-5 font-display text-[clamp(2rem,4.8vw,3.4rem)] font-light leading-[1.06] tracking-[-0.02em] text-paper">
+            <h2 className="text-on-media mt-5 font-display text-[clamp(2rem,4.8vw,3.4rem)] font-light leading-[1.06] tracking-[-0.02em] text-paper">
               {title}
             </h2>
           </Reveal>
           {sub && (
             <Reveal delay={0.12}>
-              <p className={`mt-5 max-w-xl text-[1.05rem] leading-relaxed text-[#e7e3d9] pretty ${centered ? "mx-auto" : ""}`}>
+              <p className={`text-on-media mt-5 max-w-xl text-[1.05rem] leading-relaxed text-[#f0ece2] pretty ${centered ? "mx-auto" : ""}`}>
                 {sub}
               </p>
             </Reveal>
