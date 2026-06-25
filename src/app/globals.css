@@ -1,0 +1,415 @@
+@import "tailwindcss";
+
+/* ============================================================
+   CHRIS KARAPATSAKIS  ·  "On the Record"
+   The visual world of the artifact a home sale produces: the
+   deed, the title document, the engraved certificate, the
+   sealed promise. Warm bone document stock, near-black ink,
+   an established evergreen, and a single clay-bronze used for
+   the seal and key marks. Quiet luxury. Solid color, hairlines,
+   and one embossed seal. No gradients, no hype.
+   Rules baked in: no fabricated reviews/figures, no em dashes.
+   ============================================================ */
+
+@theme {
+  /* --- document surfaces --- */
+  --color-paper: #f6f3ee;   /* page base, warm bone document stock */
+  --color-card: #fcfaf7;    /* raised cards, near-white warm */
+  --color-vellum: #efeae0;  /* inset panels, a half-tone deeper than paper */
+
+  /* --- ink (near-black, the press) --- */
+  --color-ink: #1c1b19;     /* deepest, headlines + primary type */
+  --color-stone: #4a463f;   /* body text on paper */
+  --color-ash: #8b857b;     /* captions, labels, muted */
+
+  /* --- evergreen (the established brand field) --- */
+  --color-pine: #1f3a2e;    /* deep evergreen, dark sections, trust */
+  --color-pine-deep: #16291f;
+
+  /* --- clay-bronze (the single warm accent: seal, CTA, marks) --- */
+  --color-clay: #a8794e;
+  --color-clay-deep: #855c38;
+  --color-sand: #cba87a;    /* lighter clay, for marks on dark fields */
+
+  /* hairline made available as a border/text utility */
+  --color-hair: #e4ded4;
+
+  /* --- radii (documents lean square; small, deliberate softness) --- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+
+  /* --- fonts (next/font sets the -raw vars on <html>) --- */
+  --font-display: var(--font-display-raw), "Fraunces", "Hoefler Text", Georgia, serif;
+  --font-body: var(--font-body-raw), "Inter Tight", system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-script-raw), "Pinyon Script", "Snell Roundhand", cursive;
+}
+
+/* rgba tokens, shadows, easings */
+:root {
+  --line-ink: rgba(28, 27, 25, 0.12);     /* standard hairline on paper */
+  --line-ink-soft: rgba(28, 27, 25, 0.07);
+  --line-ink-strong: rgba(28, 27, 25, 0.2);
+  --line-clay: rgba(168, 121, 78, 0.45);
+  --line-clay-soft: rgba(168, 121, 78, 0.24);
+  --line-light: rgba(246, 243, 238, 0.12);     /* hairline on dark */
+  --line-light-strong: rgba(246, 243, 238, 0.22);
+
+  --scrim-ink: rgba(18, 17, 15, 0.58);
+
+  --glass-paper: rgba(246, 243, 238, 0.82);
+  --glass-paper-strong: rgba(246, 243, 238, 0.95);
+  --glass-pine: rgba(22, 41, 31, 0.7);
+
+  --shadow-card:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 18px 44px -30px rgba(28, 27, 25, 0.34);
+  --shadow-lift:
+    0 1px 0 rgba(255, 255, 255, 0.65) inset,
+    0 30px 70px -34px rgba(28, 27, 25, 0.42);
+  --shadow-float: 0 28px 64px -30px rgba(28, 27, 25, 0.46);
+  --shadow-dark:
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 30px 70px -34px rgba(0, 0, 0, 0.55);
+  --shadow-seal:
+    0 14px 30px -12px rgba(102, 70, 40, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 -9px 16px rgba(74, 49, 26, 0.35) inset;
+
+  --ease-press: cubic-bezier(0.2, 0.9, 0.25, 1);
+  --ease-sweep: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- base ---------- */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ash) transparent;
+  -webkit-text-size-adjust: 100%;
+}
+html,
+body {
+  max-width: 100vw;
+}
+body {
+  background: var(--color-paper);
+  color: var(--color-stone);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+}
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cdc6ba;
+  border-radius: 10px;
+  border: 3px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-clay); }
+
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container-wide {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 640px) { .container-wide { padding-inline: 2rem; } }
+@media (min-width: 1024px) { .container-wide { padding-inline: 2.5rem; } }
+
+.container-prose {
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section { padding-block: clamp(4.5rem, 9vw, 8rem); }
+.section-tight { padding-block: clamp(3rem, 6vw, 5rem); }
+
+/* ============================================================
+   TYPE UTILITIES
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-script { font-family: var(--font-script); }
+
+/* uppercase tracked label (the "record label" eyebrow) */
+.overline {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-clay-deep);
+}
+.overline-ash { color: var(--color-ash); }
+.overline-sand { color: var(--color-sand); }
+
+/* the record label with a leading clay tick */
+.record-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-clay-deep);
+}
+.record-label::before {
+  content: "";
+  width: 1.6rem;
+  height: 1px;
+  background: var(--color-clay);
+  opacity: 0.85;
+}
+.record-label-sand { color: var(--color-sand); }
+.record-label-sand::before { background: var(--color-sand); opacity: 0.6; }
+
+.display-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* tabular figures for stats, prices, phone */
+.tnum { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+.balance { text-wrap: balance; }
+.pretty { text-wrap: pretty; }
+
+/* ============================================================
+   SURFACES
+   ============================================================ */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--line-ink-soft);
+  box-shadow: var(--shadow-card);
+}
+.card-vellum {
+  background: var(--color-vellum);
+  border: 1px solid var(--line-ink-soft);
+}
+.glass {
+  background: var(--glass-paper);
+  -webkit-backdrop-filter: saturate(150%) blur(14px);
+  backdrop-filter: saturate(150%) blur(14px);
+  border: 1px solid var(--line-ink-soft);
+}
+.glass-strong {
+  background: var(--glass-paper-strong);
+  -webkit-backdrop-filter: saturate(150%) blur(18px);
+  backdrop-filter: saturate(150%) blur(18px);
+  border: 1px solid var(--line-ink);
+}
+
+/* dark field (deep evergreen section) */
+.field-pine {
+  background: var(--color-pine);
+  color: #d8ded6;
+}
+.field-pine h1, .field-pine h2, .field-pine h3, .field-pine h4 { color: #f6f3ee; }
+
+.field-ink {
+  background: var(--color-ink);
+  color: #d6d3cb;
+}
+.field-ink h1, .field-ink h2, .field-ink h3, .field-ink h4 { color: #f6f3ee; }
+
+/* ============================================================
+   ENGRAVING DETAILS (the signature accent system)
+   ============================================================ */
+
+/* a fine clay rule broken by a center lozenge, certificate-style */
+.engrave-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--color-clay);
+}
+.engrave-rule::before,
+.engrave-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line-clay);
+}
+.engrave-rule .lozenge {
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  border: 1px solid var(--color-clay);
+  background: transparent;
+  flex: none;
+}
+
+/* hairlines */
+.hairline { height: 1px; width: 100%; background: var(--color-hair); }
+.hairline-ink { height: 1px; width: 100%; background: var(--line-ink); }
+.hairline-clay { height: 1px; width: 100%; background: var(--line-clay); }
+
+/* a corner registration tick, framing a document panel */
+.reg-frame { position: relative; }
+.reg-frame::before,
+.reg-frame::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-color: var(--color-clay);
+  border-style: solid;
+  opacity: 0.65;
+}
+.reg-frame::before { top: 12px; left: 12px; border-width: 1px 0 0 1px; }
+.reg-frame::after { bottom: 12px; right: 12px; border-width: 0 1px 1px 0; }
+
+/* ============================================================
+   WAX SEAL (the guarantee mark) — embossed clay-bronze, no gradient
+   ============================================================ */
+.wax-seal {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  color: #f4ead9;
+  text-align: center;
+  background: var(--color-clay);
+  box-shadow: var(--shadow-seal);
+  isolation: isolate;
+}
+.wax-seal::before {
+  /* scalloped edge, two clay tones in a hard-step conic (a pattern, not a fade) */
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    var(--color-clay) 0deg 9deg,
+    var(--color-clay-deep) 9deg 18deg
+  );
+  -webkit-mask: radial-gradient(circle at center, transparent 60%, #000 61%);
+  mask: radial-gradient(circle at center, transparent 60%, #000 61%);
+  z-index: -1;
+  opacity: 0.95;
+}
+.wax-seal::after {
+  /* engraved inner ring */
+  content: "";
+  position: absolute;
+  inset: 0.7rem;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 234, 217, 0.4);
+}
+
+/* ============================================================
+   BUTTONS / INTERACTION
+   ============================================================ */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.link-underline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: var(--color-clay);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out-soft);
+}
+.link-underline:hover::after { transform: scaleX(1); }
+
+/* form field, document-style */
+.field {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-ink);
+  background: var(--color-card);
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field::placeholder { color: var(--color-ash); }
+.field:focus {
+  outline: none;
+  border-color: var(--color-clay);
+  box-shadow: 0 0 0 3px var(--line-clay-soft);
+}
+
+/* ============================================================
+   MOTION HELPERS
+   ============================================================ */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+.floatY { animation: floatY 7s ease-in-out infinite; }
+
+/* slow cinematic drift for scene imagery (gives stills a living feel) */
+@keyframes kenburns {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.16) translate(-1.5%, -1%); }
+}
+.kenburns { animation: kenburns 26s ease-in-out infinite alternate; will-change: transform; }
+
+/* legibility scrim over scene photography (functional, not decorative) */
+.scene-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(18, 17, 15, 0.86) 0%, rgba(18, 17, 15, 0.5) 45%, rgba(18, 17, 15, 0.55) 100%);
+}
+.scene-scrim-soft {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 17, 15, 0.82) 0%, rgba(18, 17, 15, 0.32) 55%, rgba(18, 17, 15, 0.62) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .floatY { animation: none !important; }
+}
