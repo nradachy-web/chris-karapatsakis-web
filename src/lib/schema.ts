@@ -1,6 +1,6 @@
-// JSON-LD builders. Honesty rule: no aggregateRating (only one real review),
-// a single Review node instead, so we never imply review volume.
-import { BRAND, COMPLIANCE, SITE_URL, REVIEW, type CityData } from "./constants";
+// JSON-LD builders. aggregateRating reflects the REAL Google Business Profile
+// (5.0 from 14 reviews), with a few verbatim Review nodes.
+import { BRAND, COMPLIANCE, SITE_URL, GOOGLE, GOOGLE_REVIEWS, type CityData } from "./constants";
 
 const brokerOrg = {
   "@type": "RealEstateAgent",
@@ -45,12 +45,18 @@ export function agentJsonLd() {
     worksFor: brokerOrg,
     memberOf: brokerOrg,
     award: BRAND.awards.map((a) => `${a.name} (${a.by}, ${a.year})`),
-    review: {
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: GOOGLE.rating,
+      reviewCount: GOOGLE.count,
+      bestRating: "5",
+    },
+    review: GOOGLE_REVIEWS.slice(0, 4).map((r) => ({
       "@type": "Review",
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Verified Zillow client" },
-      reviewBody: REVIEW.quote,
-    },
+      author: { "@type": "Person", name: r.name },
+      reviewBody: r.text,
+    })),
     sameAs: [
       BRAND.social.zillow,
       BRAND.social.linkedin,

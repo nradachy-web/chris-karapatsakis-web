@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
+import RichText from "@/components/ui/RichText";
 
 export interface Block {
   h2?: string;
@@ -21,7 +22,11 @@ export default function ArticleBody({ blocks }: { blocks: Block[] }) {
                   {b.h2}
                 </h2>
               )}
-              {b.p && <p className="mt-4 text-[1.04rem] leading-relaxed text-stone pretty">{b.p}</p>}
+              {b.p && (
+                <p className="mt-4 text-[1.04rem] leading-relaxed text-stone pretty">
+                  <RichText text={b.p} />
+                </p>
+              )}
               {b.list && (
                 <ul className="mt-4 space-y-2.5">
                   {b.list.map((li) => (
@@ -29,14 +34,14 @@ export default function ArticleBody({ blocks }: { blocks: Block[] }) {
                       <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-clay/15">
                         <Check className="h-3 w-3 text-clay-deep" strokeWidth={3} />
                       </span>
-                      {li}
+                      <span><RichText text={li} /></span>
                     </li>
                   ))}
                 </ul>
               )}
               {b.note && (
                 <div className="mt-5 rounded-lg border border-[var(--line-clay-soft)] bg-clay/[0.05] px-5 py-4 text-[0.95rem] leading-relaxed text-stone">
-                  {b.note}
+                  <RichText text={b.note} />
                 </div>
               )}
             </Reveal>

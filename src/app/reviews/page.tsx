@@ -17,9 +17,9 @@ export default function ReviewsPage() {
     <>
       <PageHero
         eyebrow="Reputation"
-        title="The record speaks for"
-        italic="itself"
-        subtitle="I would rather show you real production than a wall of reviews I cannot vouch for. Here is the honest picture: hundreds of homes sold, a verified five-star review, and the press that has covered me."
+        title="5.0 stars, and a record to"
+        italic="back it up"
+        subtitle="A perfect 5.0 across 14 Google reviews, hundreds of homes sold, and real press. Here is the honest picture of nearly 30 years selling homes in Metro Detroit."
       />
 
       {/* proof stats */}
@@ -39,9 +39,8 @@ export default function ReviewsPage() {
             ))}
           </div>
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-ash">
-            An honest note: Chris has a long, strong sales record but a small number of public online
-            reviews. That is changing. If you have worked with him, a review on Zillow or Google
-            genuinely helps.
+            Every review below is real and verifiable on Google. If you have worked with Chris, a
+            review genuinely helps other sellers find an agent they can trust.
           </p>
         </div>
       </section>

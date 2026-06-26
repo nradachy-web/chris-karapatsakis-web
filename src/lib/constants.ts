@@ -76,6 +76,7 @@ export const BRAND = {
   ],
 
   social: {
+    google: "https://maps.google.com/?cid=1925539379817679668",
     zillow: "https://www.zillow.com/profile/chris-karapatsakis/",
     linkedin: "https://www.linkedin.com/in/chris-karapatsakis-98842828/",
     facebook: "https://www.facebook.com/chriskrealtor1/",
@@ -116,6 +117,7 @@ export const NAV_LINKS = [
   { href: "/seller-guarantee", label: "Guarantee" },
   { href: "/reviews", label: "Reviews" },
   { href: "/areas", label: "Areas" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ] as const;
 
@@ -157,7 +159,42 @@ export const PROOF_STATS = [
   { value: "700+", label: "Career transactions", source: "HomeLight" },
   { value: "~84%", label: "Of his work is representing sellers", source: "HomeLight" },
   { value: "Top 7%", label: "Of agents in Plymouth", source: "HomeLight" },
-  { value: "5.0", label: "Client rating", source: "Zillow, 1 review" },
+  { value: "5.0 ★", label: "Average client rating", source: "Google, 14 reviews" },
+] as const;
+
+// Google Business Profile rating + real, verbatim Google reviews.
+export const GOOGLE = {
+  rating: "5.0",
+  count: 14,
+  url: "https://maps.google.com/?cid=1925539379817679668",
+} as const;
+
+// Real Google reviews (verbatim; long ones trimmed with an ellipsis, meaning unchanged).
+export const GOOGLE_REVIEWS = [
+  {
+    name: "CJ Venie",
+    text: "Chris is an honest sellers agent. He will give your property an honest market assessment and get top dollar for it. Chris is a respected and talented sellers real estate agent. He sells houses fast and for top dollar.",
+  },
+  {
+    name: "Alec Evans",
+    text: "We had a number in our heads that was too high, and Chris told us so. Politely, with the comps in front of us, but he told us. We trusted him, priced it where he suggested, and had multiple offers within the first week. We closed above asking and on the timeline we needed.",
+  },
+  {
+    name: "Aidan Citko",
+    text: "He gave us realistic pricing guidance instead of telling us what we wanted to hear, pointed out concerns we would have missed on our own, and never pushed us toward a decision we weren't ready to make. He treated it like our decision, not his commission.",
+  },
+  {
+    name: "Tommy Haddad",
+    text: "Chris is an amazing realtor, he helped my family and I sell our home for a great price, the whole process with him was great, always answering our calls and all of the questions we had. Definitely recommend him.",
+  },
+  {
+    name: "Jeff Quanstrom",
+    text: "Chris made the process feel surprisingly easy. What stood out to me was not just his knowledge of the market, but his ability to listen. He is reliable, hardworking, and genuinely invested in helping his clients succeed.",
+  },
+  {
+    name: "Hassan Jaber",
+    text: "One of the best real estate agents I have ever spoken to. Helped me so much. Definitely recommend Chris!",
+  },
 ] as const;
 
 // ============================================================
